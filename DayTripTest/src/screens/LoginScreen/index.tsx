@@ -22,7 +22,7 @@ export function LoginScreen() {
   return (
     <Animatable.View animation="fadeIn" style={styles.rootContainer}>
       <ImageBackground
-        source={require('../../assets/main.jpg')}
+        source={require('@assets/main.jpg')}
         resizeMode="cover"
         style={styles.backgroundImage}>
         {/* 센터 로고 */}
@@ -30,10 +30,7 @@ export function LoginScreen() {
           animation="fadeIn"
           delay={250}
           style={styles.logoContainer}>
-          <Image
-            source={require('../../assets/logo.png')}
-            style={styles.logoImg}
-          />
+          <Image source={require('@assets/logo.png')} style={styles.logoImg} />
           <Text style={styles.text}>일상 속 떠나는 하루여행</Text>
         </Animatable.View>
 
@@ -45,7 +42,7 @@ export function LoginScreen() {
               style={styles.loginBtn}
               onPress={onLoginBtnPress}>
               <Image
-                source={require('../../assets/google.jpeg')}
+                source={require('@assets/google.jpeg')}
                 style={styles.googleImage}
               />
               <Text style={styles.loginText}>구글로 로그인</Text>
@@ -58,7 +55,7 @@ export function LoginScreen() {
         {isLoading && (
           <>
             <LottieView
-              source={require('../../assets/loading/1.json')}
+              source={require('@assets/loading/1.json')}
               autoPlay
               loop
               style={styles.loading}
