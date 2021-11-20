@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -7,11 +7,15 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import LottieView from 'lottie-react-native';
 
 import {styles} from './styles';
 
 export function LoginScreen() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const onLoginBtnPress = () => {
+    setIsLoading(!isLoading);
     console.log('loginBtn Pressed');
   };
 
@@ -51,6 +55,16 @@ export function LoginScreen() {
             로그인함으로써 OurSpace Inc.의 정책 및 약관에 동의합니다.
           </Text>
         </View>
+        {isLoading && (
+          <>
+            <LottieView
+              source={require('../../assets/loading/1.json')}
+              autoPlay
+              loop
+              style={styles.loading}
+            />
+          </>
+        )}
       </ImageBackground>
     </Animatable.View>
   );

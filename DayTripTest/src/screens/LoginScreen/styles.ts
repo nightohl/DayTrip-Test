@@ -40,4 +40,9 @@ export const styles = StyleSheet.create({
   },
   googleImage: {width: 25, height: 25, position: 'absolute', left: 20},
   policyText: {color: 'white', marginTop: 20, fontSize: 12},
+  loading: {
+    position: 'absolute',
+    width: '100%',
+    height: 250, //150
+  },
 });
