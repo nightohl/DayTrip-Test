@@ -10,19 +10,24 @@ import * as Animatable from 'react-native-animatable';
 import LottieView from 'lottie-react-native';
 
 import {styles} from './styles';
+import {LoginProps} from '@navigators/Stack/types';
 
-export function LoginScreen() {
+export function LoginScreen({navigation}: LoginProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const onLoginBtnPress = () => {
-    setIsLoading(!isLoading);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigation.navigate('PlaceDetail');
+    }, 1000);
     console.log('loginBtn Pressed');
   };
 
   return (
     <Animatable.View animation="fadeIn" style={styles.rootContainer}>
       <ImageBackground
-        source={require('../../assets/main.jpg')}
+        source={require('@assets/main.jpg')}
         resizeMode="cover"
         style={styles.backgroundImage}>
         {/* 센터 로고 */}
@@ -30,10 +35,7 @@ export function LoginScreen() {
           animation="fadeIn"
           delay={250}
           style={styles.logoContainer}>
-          <Image
-            source={require('../../assets/logo.png')}
-            style={styles.logoImg}
-          />
+          <Image source={require('@assets/logo.png')} style={styles.logoImg} />
           <Text style={styles.text}>일상 속 떠나는 하루여행</Text>
         </Animatable.View>
 
@@ -45,7 +47,7 @@ export function LoginScreen() {
               style={styles.loginBtn}
               onPress={onLoginBtnPress}>
               <Image
-                source={require('../../assets/google.jpeg')}
+                source={require('@assets/google.jpeg')}
                 style={styles.googleImage}
               />
               <Text style={styles.loginText}>구글로 로그인</Text>
@@ -58,7 +60,7 @@ export function LoginScreen() {
         {isLoading && (
           <>
             <LottieView
-              source={require('../../assets/loading/1.json')}
+              source={require('@assets/loading/1.json')}
               autoPlay
               loop
               style={styles.loading}
