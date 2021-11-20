@@ -1,6 +1,11 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {LoginScreen} from '@screens/LoginScreen';
+import {MainStack} from '@navigators/Stack';
 export default function App() {
-  return <LoginScreen />;
+  return (
+    <NavigationContainer>
+      <MainStack />
+    </NavigationContainer>
+  );
 }

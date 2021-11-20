@@ -10,12 +10,17 @@ import * as Animatable from 'react-native-animatable';
 import LottieView from 'lottie-react-native';
 
 import {styles} from './styles';
+import {LoginProps} from '@navigators/Stack/types';
 
-export function LoginScreen() {
+export function LoginScreen({navigation}: LoginProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const onLoginBtnPress = () => {
-    setIsLoading(!isLoading);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigation.navigate('PlaceDetail');
+    }, 1000);
     console.log('loginBtn Pressed');
   };
 
