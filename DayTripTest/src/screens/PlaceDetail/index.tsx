@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
-import Ionicons from 'react-native-vector-icons/SimpleLineIcons';
+import {View} from 'react-native';
 import {styles} from './styles';
 import {PlaceDetailProps} from '@navigators/Stack/types';
 
-import * as Animatable from 'react-native-animatable';
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-
 import {PlaceInfoTab} from '@navigators/Tab';
+import {
+  PlaceDetailTitle,
+  PlaceDetailTitleSkeleton,
+} from '@components/PlaceDetail';
 
 export function PlaceDetail({}: PlaceDetailProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,33 +19,14 @@ export function PlaceDetail({}: PlaceDetailProps) {
   return (
     <View style={styles.rootContainer}>
       {isLoading ? (
-        <TitleSkeleton />
+        <PlaceDetailTitleSkeleton />
       ) : (
-        <Animatable.View
-          style={styles.titleContainer}
-          animation="fadeIn"
-          duration={1500}>
-          <Text style={styles.title}>더반올가닉</Text>
-          <View style={styles.subInfo}>
-            <Ionicons name="location-pin" size={15} />
-            <Text style={styles.infoText}>경기도 | 이천시</Text>
-            <Text style={styles.infoText}>카페</Text>
-          </View>
-        </Animatable.View>
+        <PlaceDetailTitle
+          title="더반올가닉"
+          subInfos={['경기도 | 이천시', '카페']}
+        />
       )}
       <PlaceInfoTab />
     </View>
   );
 }
-
-const TitleSkeleton = () => (
-  <View style={styles.titleContainer}>
-    <SkeletonPlaceholder>
-      <View style={styles.skeletonTitle} />
-      <View style={styles.subInfo}>
-        <View style={styles.skeletonSubInfo1} />
-        <View style={styles.skeletonSubInfo2} />
-      </View>
-    </SkeletonPlaceholder>
-  </View>
-);

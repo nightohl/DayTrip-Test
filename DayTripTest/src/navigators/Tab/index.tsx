@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {RootPlaceInfoTab} from './types';
 
 //Tab Navigatior
@@ -9,7 +9,7 @@ const Tab = createMaterialTopTabNavigator<RootPlaceInfoTab>();
 
 export function PlaceInfoTab() {
   return (
-    <View style={{flex: 1, backgroundColor: 'blue'}}>
+    <View style={styles.rootContainer}>
       <Tab.Navigator
         screenOptions={{
           swipeEnabled: false,
@@ -32,3 +32,7 @@ export function PlaceInfoTab() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  rootContainer: {flex: 1, backgroundColor: 'blue'},
+});
