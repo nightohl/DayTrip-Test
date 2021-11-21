@@ -10,7 +10,12 @@ const Tab = createMaterialTopTabNavigator<RootPlaceInfoTab>();
 export function PlaceInfoTab() {
   return (
     <View style={{flex: 1, backgroundColor: 'blue'}}>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          swipeEnabled: false,
+          tabBarIndicatorStyle: {backgroundColor: 'white'},
+          tabBarLabelStyle: {fontSize: 15, fontWeight: '500'},
+        }}>
         <Tab.Screen
           name="DayLog"
           component={DayLog}
