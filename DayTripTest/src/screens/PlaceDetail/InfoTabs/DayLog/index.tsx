@@ -17,7 +17,7 @@ export function DayLog({}: DayLogProps) {
     '바이닐과 디자인 서적을\n이용할 수 있는 문화 도서관.\n수성못의 새로운 공간 닷라이브러리.\n';
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.rootContainer}>
       {isLoading ? (
         <DayLogSkel />
       ) : (
@@ -73,7 +73,7 @@ export function DayLog({}: DayLogProps) {
 }
 
 const DayLogSkel = () => (
-  <ScrollView>
+  <ScrollView style={styles.rootContainer}>
     <SkeletonPlaceholder>
       {/* 게시 정보 */}
       <View style={styles.writerInfoRootContainer}>

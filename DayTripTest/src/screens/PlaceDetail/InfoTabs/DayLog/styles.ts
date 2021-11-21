@@ -2,6 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const Width = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
+  rootContainer: {backgroundColor: 'white'},
   writerInfoRootContainer: {
     margin: 15,
     marginBottom: 10,
