@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  rootContainer: {backgroundColor: 'white', flex: 1},
+  policyText: {color: 'white', marginTop: 20, fontSize: 12},
 });

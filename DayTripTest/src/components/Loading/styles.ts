@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  rootContainer: {backgroundColor: 'white', flex: 1},
+  loading: {
+    position: 'absolute',
+    width: '100%',
+    height: 250, //150
+  },
 });
