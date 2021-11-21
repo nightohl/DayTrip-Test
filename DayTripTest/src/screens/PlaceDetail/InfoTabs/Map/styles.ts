@@ -23,4 +23,5 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   map: {width: Width * 0.9, height: Width * 0.9, marginTop: 10},
+  naviIcon: {flex: 1, alignItems: 'flex-end'},
 });
