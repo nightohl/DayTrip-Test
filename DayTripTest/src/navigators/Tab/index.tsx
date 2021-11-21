@@ -21,7 +21,7 @@ export function PlaceInfoTab() {
           component={DayLog}
           options={{title: '데이로그'}}
         />
-        <Tab.Screen name="Map" component={Map} options={{title: '정보'}} />
+        <Tab.Screen name="Map" component={Map} options={{title: '위치'}} />
         <Tab.Screen name="Near" component={Near} options={{title: '주변'}} />
         <Tab.Screen
           name="Curation"
