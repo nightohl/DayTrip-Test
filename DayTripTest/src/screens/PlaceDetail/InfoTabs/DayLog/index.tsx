@@ -35,7 +35,7 @@ export function DayLog({}: DayLogProps) {
             </View>
             {/* 게시 날짜 */}
             <View style={styles.writeInfoContainer}>
-              <Text style={styles.writeDate}>2021.8.25.</Text>
+              <Text style={styles.writeDate}>2021.11.21.</Text>
             </View>
           </View>
 
